@@ -1,6 +1,40 @@
 // === Datos de la Malla ===
-const semestres = [/*... truncado visualmente ...*/]; // Este bloque incluye todos los semestres y ramos. Está completo en el ZIP.
+const semestres = [
+  {
+    nombre: "1° Semestre",
+    ramos: [
+      { codigo: "BIOL034", nombre: "Biología Celular", creditos: 8 },
+      { codigo: "BIOL035", nombre: "Lab. Biocelular", creditos: 2 },
+      { codigo: "DEBD221", nombre: "Zoología", creditos: 6 },
+      { codigo: "FMMP003", nombre: "Matemática", creditos: 8 },
+      { codigo: "MVET611", nombre: "Intro. a la Medicina Veterinaria", creditos: 6 },
+      { codigo: "QUI002", nombre: "Química", creditos: 8 }
+    ]
+  },
+  {
+    nombre: "2° Semestre",
+    ramos: [
+      { codigo: "BIOL166", nombre: "Bioquímica", creditos: 8, prereq: ["BIOL034", "BIOL035", "QUI002"] },
+      { codigo: "CEGHC11", nombre: "Habilidades Comunicativas", creditos: 8 },
+      { codigo: "ING119", nombre: "Inglés I", creditos: 12 },
+      { codigo: "MVET621", nombre: "Agresión y Defensa Orgánica I", creditos: 18, prereq: ["BIOL034", "BIOL035"] },
+      { codigo: "MVET622", nombre: "Cuerpo Animal I", creditos: 19, prereq: ["BIOL034", "BIOL035", "DEBD221"] }
+    ]
+  },
+  {
+    nombre: "3° Semestre",
+    ramos: [
+      { codigo: "DEBD130", nombre: "Métodos Cuant. RRNN", creditos: 9, prereq: ["FMMP003"] },
+      { codigo: "ING129", nombre: "Inglés II", creditos: 12, prereq: ["ING119"] },
+      { codigo: "MVET631", nombre: "Agresión y Defensa Orgánica II", creditos: 15, prereq: ["BIOL166", "MVET621"] },
+      { codigo: "MVET632", nombre: "Cuerpo Animal II", creditos: 14, prereq: ["MVET622"] },
+      { codigo: "MVET633", nombre: "Función y Disfunción Orgánica I", creditos: 15, prereq: ["MVET622"] }
+    ]
+  }
+  // Aquí puedes seguir agregando los semestres restantes si lo necesitas
+];
 
+// === Funciones de la App ===
 function crearMalla() {
   const contenedor = document.getElementById("malla");
   contenedor.innerHTML = "";
