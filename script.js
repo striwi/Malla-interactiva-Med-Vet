@@ -33,12 +33,13 @@ h1 {
 }
 
 .ramo {
-  background: #fbd3e0; /* rosado */
+  background: #fbd3e0;
   padding: 8px;
   border-radius: 6px;
   margin: 5px 0;
   position: relative;
   cursor: pointer;
+  transition: background 0.3s;
 }
 
 .ramo.bloqueado {
@@ -48,13 +49,15 @@ h1 {
 }
 
 .ramo.aprobado {
-  background: #d3bce0; /* morado */
+  background: #d3bce0;
   text-decoration: line-through;
 }
 
 .ramo input.nota {
   width: 100%;
   margin-top: 5px;
+  padding: 4px;
+  box-sizing: border-box;
 }
 
 .resumen-semestre {
